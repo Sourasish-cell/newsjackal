@@ -10,7 +10,7 @@ import json
 import os
 from datetime import datetime
 
-app = Flask(__name__, static_folder='build', static_url_path='/static')  
+app = Flask(__name__, static_folder=None)  
 CORS(app, resources={r"/api/*": {"origins": ["https://newsjackal-1.onrender.com"]}})  # Enable CORS for all routes
 
 # Cache directory for storing fetched news to reduce API hits
@@ -350,13 +350,13 @@ def save_to_cache(key, data):
         print(f"Error saving cache to disk: {str(e)}")
 
 
-@app.route('/', defaults={'path': ''})
+# @app.route('/', defaults={'path': ''})
 
-@app.route('/<path:path>')
-def serve_static(path):
-    if not path or path == 'index.html':
-        return send_from_directory(app.static_folder, 'index.html')
-    return send_from_directory(app.static_folder, path)
+# @app.route('/<path:path>')
+# def serve_static(path):
+#     if not path or path == 'index.html':
+#         return send_from_directory(app.static_folder, 'index.html')
+#     return send_from_directory(app.static_folder, path)
 
 
 if __name__ == '__main__':
