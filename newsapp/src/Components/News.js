@@ -47,7 +47,7 @@ export class News extends Component {
     console.log("Using API_BASE:", API_BASE);
   
     try {
-      console.log("Checking backend health at:", `${API_BASE}/api/health`);
+      console.log("Checking backend health at:", `${API_BASE}/health`);
       const response = await fetch(`${API_BASE}/api/health`);
       if (response.ok) {
         console.log("Backend health check passed:", await response.json());
@@ -120,7 +120,7 @@ export class News extends Component {
       return;
     }
   
-    let apiEndpoint = `${API_BASE}/api/top-headlines`;
+    let apiEndpoint = `${API_BASE}/top-headlines`;
     let queryParams = new URLSearchParams();
     queryParams.append('category', this.props.category);
     if (this.state.selectedSource) queryParams.append('source', this.state.selectedSource);
