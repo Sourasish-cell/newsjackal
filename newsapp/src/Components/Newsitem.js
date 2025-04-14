@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export class Newsitem extends Component {
   render() {
     const { title, description, imageUrl, newsUrl, darkMode, author, date, source } = this.props;
+    const fallbackImage = 'https://imgs.search.brave.com/oK32WQzuyvw5EUGknBtPc5RHacWFKXRKl-erDAUN_S8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MTE0ODg4NC92ZWN0/b3IvYWJzdHJhY3Qt/Z2xvYmUtYmFja2dy/b3VuZC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9OXJWUWZy/VUdOdFI1UTB5Z211/UTlqdmlWVWZybllI/VUhjZml3YUg1LVdG/RT0';
     
     return (
       <div className="h-100">
