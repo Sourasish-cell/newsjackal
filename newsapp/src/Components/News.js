@@ -47,7 +47,7 @@ export class News extends Component {
     console.log("Using API_BASE:", API_BASE);
   
     try {
-      console.log("Checking backend health at:", `${API_BASE}/health`);
+      console.log("Checking backend health at:", `${API_BASE}/api/health`);
       const response = await fetch(`${API_BASE}/api/health`);
       if (response.ok) {
         console.log("Backend health check passed:", await response.json());
