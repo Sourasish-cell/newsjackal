@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__, static_folder='build', static_url_path='/') 
-CORS(app)
+CORS(app origins=["https://newsjackal-8ta9.onrender.com"])
 
 # Cache directory for storing fetched news to reduce API hits
 CACHE_DIR = os.path.join(os.path.dirname(__file__), 'cache')
