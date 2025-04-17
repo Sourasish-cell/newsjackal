@@ -10,8 +10,8 @@ import json
 import os
 from datetime import datetime
 
-app = Flask(__name__, static_folder=None)  
-CORS(app, resources={r"/api/*": {"origins": ["https://newsjackal-1.onrender.com"]}})  # Enable CORS for all routes
+app = Flask(__name__, static_folder='build', static_url_path='/') 
+CORS(app)
 
 # Cache directory for storing fetched news to reduce API hits
 CACHE_DIR = os.path.join(os.path.dirname(__file__), 'cache')
