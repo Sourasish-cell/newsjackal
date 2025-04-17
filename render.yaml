@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: my-news-app
+    env: python
+    buildCommand: pip install -r requirements.txt && cd newsapp && npm install && npm run build && cp -r build ../build
+    startCommand: gunicorn api:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
